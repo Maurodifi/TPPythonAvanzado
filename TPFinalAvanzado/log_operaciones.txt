@@ -1,0 +1,7 @@
+2024-02-06 18:38:57 - Operación funcion_alta: None
+2024-02-06 18:40:02 - Operación funcion_modificar: None
+2024-02-06 18:40:13 - Operación funcion_modificar: None
+2024-02-06 18:40:20 - Operación funcion_modificar: None
+2024-02-06 18:51:56 - Operación funcion_alta: Alta realizada con éxito, Su nombre y apellido es: Mauro, Prueba
+2024-02-10 15:38:53 - Operaciovn funcion_alta: Alta realizada con exito, Su nombre y apellido es: muasda, sdad, con el dni: 123123. Su correo es: asdads@gmail.copm
+2024-02-12 17:36:29 - Operaciovn funcion_alta: Alta realizada con exito, Su nombre y apellido es: Mauro, Di Filippo, con el dni: 44544637. Su correo es: asdasd@gmail.coim

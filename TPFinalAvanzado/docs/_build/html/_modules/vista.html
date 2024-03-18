@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vista &mdash; documentación de TPDiplomaturaPython - 0.0.1</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=6fcc102b"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=efdbd0b9"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TPDiplomaturaPython
+          </a>
+              <div class="version">
+                0.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../controlador.html">controlador module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelo.html">modelo module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vista.html">vista module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TPDiplomaturaPython</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Código de módulo</a></li>
+      <li class="breadcrumb-item active">vista</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Código fuente para vista</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">ttk</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">messagebox</span> 
+<span class="kn">from</span> <span class="nn">modelo</span> <span class="kn">import</span> <span class="o">*</span>
+
+<div class="viewcode-block" id="VentanaPrincipal">
+<a class="viewcode-back" href="../vista.html#vista.VentanaPrincipal">[documentos]</a>
+<span class="k">class</span> <span class="nc">VentanaPrincipal</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">master</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">=</span><span class="n">BaseDatos</span><span class="p">()</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;System UTNBA&quot;</span><span class="p">)</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">)</span>
+        <span class="n">titulo</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;System UTNBA&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#1F192F&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;Arial 15 bold&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+        <span class="n">fuentetit</span> <span class="o">=</span> <span class="s1">&#39;Mooli 12&#39;</span>
+        <span class="n">fuentecue</span> <span class="o">=</span> <span class="s1">&#39;Roboto-Medium 10&#39;</span>
+        <span class="n">patrondni</span> <span class="o">=</span> <span class="s2">&quot;^[0-9]+(?i:[ _-][0-9]+)*$&quot;</span>
+        <span class="c1"># VARIABLES</span>
+        <span class="n">var_nombre</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+        <span class="n">var_apellido</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+        <span class="n">var_dni</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+        <span class="n">var_correo</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+        <span class="n">var_dnic</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+        <span class="c1"># ---------- ALTA DE REGISTRO ---------------------------</span>
+        <span class="n">registrasetitulo</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Registrarse&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentetit</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Nombre&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">nombreentry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">var_nombre</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">apellido</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Apellido&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">apellidoentry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">master</span><span class="p">,</span><span class="n">textvariable</span><span class="o">=</span><span class="n">var_apellido</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="n">dni</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Dni&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">dnientry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">master</span><span class="p">,</span><span class="n">textvariable</span><span class="o">=</span><span class="n">var_dni</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="n">correo</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Correo&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">correoentry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">master</span><span class="p">,</span><span class="n">textvariable</span><span class="o">=</span><span class="n">var_correo</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+        <span class="n">filiacion</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Filiacion&quot;</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="c1">#filiacionentry = Entry(main,textvariable=var_filiacion).grid(column=1, row=6)</span>
+
+        <span class="n">boton_reg</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Registrar&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#65B8A6&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">vista_alta</span><span class="p">(</span><span class="n">var_nombre</span><span class="p">,</span><span class="n">var_apellido</span><span class="p">,</span><span class="n">var_dni</span><span class="p">,</span><span class="n">var_correo</span><span class="p">,</span><span class="n">combo</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">),</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">combo</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Combobox</span><span class="p">(</span>
+            <span class="n">state</span><span class="o">=</span><span class="s2">&quot;readonly&quot;</span><span class="p">,</span>
+            <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Docente&quot;</span><span class="p">,</span> <span class="s2">&quot;No Docente&quot;</span><span class="p">,</span> <span class="s2">&quot;Alumno&quot;</span><span class="p">,</span> <span class="s2">&quot;Monotributista&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">combo</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+        <span class="c1"># INPUT MODIFICACION/CONSULTA</span>
+        <span class="n">consultatitulo</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Consulta&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentetit</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">dniconsulta</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Ingrese Documento&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#F0F7DA&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">dniconsultaentry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">var_dnic</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span> <span class="p">)</span>
+
+        <span class="n">boton_con</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Consultar&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#8BE83F&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">vista_consulta</span><span class="p">(</span><span class="n">var_dnic</span><span class="p">),</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">boton_mod</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Modificar&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#66E8CA&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">vista_modificar</span><span class="p">(</span><span class="n">var_nombre</span><span class="p">,</span><span class="n">var_apellido</span><span class="p">,</span><span class="n">var_dni</span><span class="p">,</span><span class="n">var_correo</span><span class="p">,</span><span class="n">combo</span><span class="p">,</span><span class="n">var_dnic</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">),</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">boton_eli</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Eliminar&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#FF542B&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">vista_baja</span><span class="p">(</span><span class="n">var_dnic</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">),</span> <span class="n">font</span><span class="o">=</span><span class="n">fuentecue</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="c1"># MUESTRA DE BASE</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Treeview</span><span class="p">(</span><span class="n">master</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;columns&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;#1&quot;</span><span class="p">,</span> <span class="n">minwidth</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>  <span class="c1"># no tiene encabezado porque ya existe</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="n">minwidth</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="n">minwidth</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="n">minwidth</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="n">minwidth</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="n">minwidth</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Encabezado de las columnas del Treeview</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">heading</span><span class="p">(</span><span class="s2">&quot;#1&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">heading</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Nombre&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">heading</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Apellido&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">heading</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Dni&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">heading</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Correo&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">heading</span><span class="p">(</span><span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Filiacion&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista_actualizar</span><span class="p">()</span>
+        
+        <span class="n">master</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+    
+<div class="viewcode-block" id="VentanaPrincipal.vista_actualizar">
+<a class="viewcode-back" href="../vista.html#vista.VentanaPrincipal.vista_actualizar">[documentos]</a>
+    <span class="k">def</span> <span class="nf">vista_actualizar</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">actualizar_treeview</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="VentanaPrincipal.vista_consulta">
+<a class="viewcode-back" href="../vista.html#vista.VentanaPrincipal.vista_consulta">[documentos]</a>
+    <span class="k">def</span> <span class="nf">vista_consulta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dnic</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">funcion_consulta</span><span class="p">(</span><span class="n">dnic</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="VentanaPrincipal.vista_alta">
+<a class="viewcode-back" href="../vista.html#vista.VentanaPrincipal.vista_alta">[documentos]</a>
+    <span class="k">def</span> <span class="nf">vista_alta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">nombre</span><span class="p">,</span><span class="n">apellido</span><span class="p">,</span><span class="n">dni</span><span class="p">,</span><span class="n">correo</span><span class="p">,</span><span class="n">filiacion</span><span class="p">,</span><span class="n">tree</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">funcion_alta</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="n">apellido</span><span class="p">,</span><span class="n">dni</span><span class="p">,</span><span class="n">correo</span><span class="p">,</span><span class="n">filiacion</span><span class="p">,</span><span class="n">tree</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="VentanaPrincipal.vista_baja">
+<a class="viewcode-back" href="../vista.html#vista.VentanaPrincipal.vista_baja">[documentos]</a>
+    <span class="k">def</span> <span class="nf">vista_baja</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dnic</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">funcion_baja</span><span class="p">(</span><span class="n">dnic</span><span class="p">,</span><span class="n">tree</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="VentanaPrincipal.vista_modificar">
+<a class="viewcode-back" href="../vista.html#vista.VentanaPrincipal.vista_modificar">[documentos]</a>
+    <span class="k">def</span> <span class="nf">vista_modificar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span><span class="n">apellido</span><span class="p">,</span><span class="n">dni</span><span class="p">,</span><span class="n">correo</span><span class="p">,</span><span class="n">filiacion</span><span class="p">,</span><span class="n">dnic</span><span class="p">,</span><span class="n">tree</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">funcion_modificar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="n">apellido</span><span class="p">,</span><span class="n">dni</span><span class="p">,</span><span class="n">correo</span><span class="p">,</span><span class="n">filiacion</span><span class="p">,</span><span class="n">dnic</span><span class="p">,</span><span class="n">tree</span><span class="p">)</span></div>
+</div>
+
+ 
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2023, Mauro.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
